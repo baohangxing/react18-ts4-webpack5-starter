@@ -9,6 +9,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import baseConfig from './webpack.base'
 
 // const globAll = require('glob-all')
+// eslint-disable-next-line import/no-extraneous-dependencies
 const glob = require('glob')
 // 注意这里的引用是{ PurgeCSSPlugin }，npm上官方的引入是错误的。
 const { PurgeCSSPlugin } = require('purgecss-webpack-plugin')

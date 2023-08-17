@@ -12,14 +12,12 @@ console.log('BASE_ENV', process.env.BASE_ENV)
 
 // 加载配置文件
 const envConfig = dotenv.config({
-  path: path.resolve(__dirname, '../env/.env.' + process.env.BASE_ENV)
+  path: path.resolve(__dirname, `../env/.env.${process.env.BASE_ENV}`)
 })
 
 const tsxRegex = /\.(ts|tsx)$/
 const cssRegex = /\.css$/
-const sassRegex = /\.(scss|sass)$/
 const lessRegex = /\.less$/
-const stylRegex = /\.styl$/
 const imageRegex = /\.(png|jpe?g|gif|svg)$/i
 const fontRegex = /\.(ttf|woff2?|eot|otf)$/
 const mediaRegex = /\.(mp4|webm|ogg|mp3|wav|flac|aac)$/
@@ -58,7 +56,7 @@ const baseConfig: Configuration = {
         // use: ['thread-loader', 'babel-loader'] // 项目变大之后再开启多进程loader
       },
       {
-        test: cssRegex, //匹配 css 文件
+        test: cssRegex, // 匹配 css 文件
         use: styleLoadersArray
       },
       {
@@ -78,22 +76,6 @@ const baseConfig: Configuration = {
             }
           }
         ]
-      },
-      {
-        test: sassRegex,
-        use: [
-          ...styleLoadersArray,
-          {
-            loader: 'sass-loader',
-            options: {
-              implementation: require('sass') // 使用dart-sass代替node-sass
-            }
-          }
-        ]
-      },
-      {
-        test: stylRegex,
-        use: [...styleLoadersArray, 'stylus-loader']
       },
       {
         test: imageRegex, // 匹配图片文件
@@ -145,7 +127,7 @@ const baseConfig: Configuration = {
     ]
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.less', '.css', '.scss', '.sass', '.styl', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.less', '.css', '.json'],
     // 别名需要配置两个地方，这里和 tsconfig.json
     alias: {
       '@': path.join(__dirname, '../src')
@@ -165,7 +147,7 @@ const baseConfig: Configuration = {
       // 压缩html资源
       minify: {
         removeAttributeQuotes: true,
-        collapseWhitespace: true, //去空格
+        collapseWhitespace: true, // 去空格
         removeComments: true, // 去注释
         minifyJS: true, // 在脚本元素和事件属性中缩小JavaScript(使用UglifyJS)
         minifyCSS: true // 缩小CSS样式元素和样式属性

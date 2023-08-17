@@ -1,8 +1,6 @@
 import { Suspense, lazy, useState } from 'react'
 // import '@/App.css'
 import lessStyles from '@/app.less'
-import scssStyles from '@/app.scss'
-import stylStyles from '@/app.styl'
 import smallImg from '@/assets/imgs/5kb_img.jpeg'
 import bigImg from '@/assets/imgs/10kb_img.png'
 import chengzi from '@/assets/imgs/chengzi.png'
@@ -63,12 +61,6 @@ function App() {
           <div className={lessStyles.smallImg}>小图片背景</div>
           <div className={lessStyles.bigImg}>大图片背景</div>
         </div>
-      </div>
-      <div className={scssStyles.scssBox}>
-        <div className={scssStyles.box}>scssBox</div>
-      </div>
-      <div className={stylStyles.stylBox}>
-        <div className={stylStyles.box}>stylBox</div>
       </div>
       <ClassComp />
       <div>

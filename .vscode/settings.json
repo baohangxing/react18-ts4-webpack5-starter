@@ -2,7 +2,8 @@
   "search.exclude": {
     "/node_modules": true,
     "dist": true,
-    "pnpm-lock.yaml": true
+    "pnpm-lock.yaml": true,
+    "yarn.lock": true
   },
   "files.autoSave": "onFocusChange",
   "editor.formatOnSave": true,
@@ -11,8 +12,7 @@
   "eslint.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true,
-    "source.fixAll.markdownlint": true
+    "source.fixAll.stylelint": true
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -32,15 +32,5 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "javascript.validate.enable": false,
-  "stylelint.validate": [
-    "css",
-    "less",
-    "sass",
-    "stylus",
-    "postcss"
-  ]
+  "javascript.validate.enable": false
 }

@@ -13,6 +13,7 @@ dist
 env
 .gitignore
 pnpm-lock.yaml
+yarn.lock
 README.md
 src/assets/*
 .vscode
